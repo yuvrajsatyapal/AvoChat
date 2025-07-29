@@ -1,10 +1,5 @@
-<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="23" cy="23" r="23" fill="url(#paint0_linear_8506_1288)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M18.3739 27.7131C19.222 29.2715 21.9243 34.2198 21.9243 34.2198C21.9243 34.2198 31.9224 14.8584 32.0811 14.541L32.0938 14.4839L18.3739 27.7131ZM11.7676 23.4282C11.7676 23.4282 16.4003 26.2093 17.6997 26.9812L31.4463 13.9062C29.8822 14.6642 11.7676 23.4282 11.7676 23.4282Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_8506_1288" x1="23" y1="0" x2="23" y2="46" gradientUnits="userSpaceOnUse">
-<stop stop-color="#C263FE"/>
-<stop offset="1" stop-color="#7D36FE"/>
-</linearGradient>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="512px" height="512px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g><path style="opacity:0.994" fill="#49de7f" d="M 236.5,26.5 C 321.894,22.4574 390.394,54.1241 442,121.5C 484.015,183.261 495.015,250.261 475,322.5C 449.5,398.667 398.667,449.5 322.5,475C 243.772,496.33 172.439,481.997 108.5,432C 46.8226,377.432 19.9892,308.932 28,226.5C 41.6946,140.831 87.8612,79.9978 166.5,44C 189.117,34.7827 212.45,28.9493 236.5,26.5 Z M 374.5,128.5 C 319.521,184.146 264.188,239.479 208.5,294.5C 162.833,272.667 117.167,250.833 71.5,229C 172.304,194.933 273.304,161.433 374.5,128.5 Z M 382.5,136.5 C 349.704,237.723 316.204,338.723 282,439.5C 260.022,393.712 238.189,347.879 216.5,302C 271.701,246.632 327.035,191.465 382.5,136.5 Z"/></g>
 </svg>
