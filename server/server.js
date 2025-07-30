@@ -4,6 +4,8 @@ import cors from 'cors'
 import http from 'http'
 import { connectDB } from './library/db.js'
 import userRouter from './routes/userRoutes.js';
+import messageRouter from './routes/messageRoutes.js';
+import { Server } from 'socket.io';
 
 dotenv.config();
 
@@ -15,6 +17,7 @@ app.use(cors());
 
 app.use('/api/status', (req, res) => res.send("Server is live")) 
 app.use('/api/auth', userRouter)
+app.use('api/messages', messageRouter)
 
 await connectDB();
 
