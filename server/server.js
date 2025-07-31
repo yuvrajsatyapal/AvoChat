@@ -27,7 +27,7 @@ io.on("connection", (socket) => {
 
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
-    socket.on("disconneect", () => {
+    socket.on("disconnect", () => {
         console.log("User disconnected:", userId);
         delete userSocketMap[userId];
         io.emit('getOnlineUsers', Object.keys(userSocketMap));
@@ -40,7 +40,7 @@ app.use(cors());
 
 app.use('/api/status', (req, res) => res.send("Server is live")) 
 app.use('/api/auth', userRouter)
-app.use('api/messages', messageRouter)
+app.use('/api/messages', messageRouter)
 
 await connectDB();
 
