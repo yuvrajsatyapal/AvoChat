@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "./AuthContext";
 
-export const ChartContext = createContext();
+export const ChatContext = createContext(); 
 
 export const ChatProvider = ({children}) => {
 
@@ -92,8 +92,8 @@ export const ChatProvider = ({children}) => {
     }
 
     return (
-        <ChartContext.Provider value={value}>
+        <ChatContext.Provider value={value}>
             {children}
-        </ChartContext.Provider>
+        </ChatContext.Provider>
     )
 }

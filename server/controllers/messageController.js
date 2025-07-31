@@ -5,25 +5,36 @@ import { io, userSocketMap } from '../server.js'
 
 
 export const getUsersForSidebar = async (req, res) => {
-    try {
-        const userId = req.user._id;
-        const filteredUsers = await User.find({ _id: { $ne: userId } }).select('-password');
+  try {
+    const currentUserId = req.user._id;
 
-        const unseenMessages = {};
-        const promises = filteredUsers.map(async (user) => {
-            const message = await Message.findOne({senderId: userId, receiverId: userId, seen: false});
-            if (message.length > 0) {
-                unseenMessages[user._id] = message.length;
-            }
-        })
-        await Promise.all(promises);
-        res.json({success: true, users: filteredUsers, unseenMessages});
-    } catch (error) {
-        console.log(error.message);
-        res.json({success: false, message: error.message});
-        
-    }
-}
+    // Get all users except the logged-in one
+    const filteredUsers = await User.find({ _id: { $ne: currentUserId } }).select('-password');
+
+    const unseenMessages = {};
+
+    // For each user, count how many messages they sent to the current user that are unseen
+    const promises = filteredUsers.map(async (user) => {
+      const count = await Message.countDocuments({
+        senderId: user._id,
+        receiverId: currentUserId,
+        seen: false,
+      });
+
+      if (count > 0) {
+        unseenMessages[user._id] = count;
+      }
+    });
+
+    await Promise.all(promises);
+
+    res.json({ success: true, users: filteredUsers, unseenMessages });
+  } catch (error) {
+    console.error(error.message);
+    res.json({ success: false, message: error.message });
+  }
+};
+
 
 export const getMessages = async (req, res) => {
     try {
