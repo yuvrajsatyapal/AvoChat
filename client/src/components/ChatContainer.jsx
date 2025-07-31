@@ -14,7 +14,7 @@ const ChatContainer = () => {
 
     const scrollEnd = useRef();
 
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState('');
 
     const handleSendMessage = async (e) => {
       e.preventDefault();
@@ -31,7 +31,7 @@ const ChatContainer = () => {
       }
       const reader = new FileReader();
 
-      reader.onloaded = async () => {
+      reader.onload = async () => {
         await sendMessage({image: reader.result});
         e.target.value = null;
       }
