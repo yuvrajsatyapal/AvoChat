@@ -8,12 +8,12 @@ export const getUsersForSidebar = async (req, res) => {
   try {
     const currentUserId = req.user._id;
 
-    // Get all users except the logged-in one
+    
     const filteredUsers = await User.find({ _id: { $ne: currentUserId } }).select('-password');
 
     const unseenMessages = {};
 
-    // For each user, count how many messages they sent to the current user that are unseen
+    
     const promises = filteredUsers.map(async (user) => {
       const count = await Message.countDocuments({
         senderId: user._id,
